@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.influxdb</groupId>
@@ -7,6 +8,7 @@
   <name>influxdb java bindings</name>
   <description>Java API to access the InfluxDB REST API</description>
   <url>http://www.influxdb.org</url>
+
   <licenses>
     <license>
       <name>The MIT License (MIT)</name>
@@ -17,12 +19,14 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
   <scm>
-    <connection>scm:git:influxdata-influxdb-java</connection>
-    <developerConnection>scm:git:influxdata-influxdb-java</developerConnection>
-    <url>influxdata-influxdb-java</url>
-    <tag>2.25-lineaje-01</tag>
+    <connection>scm:git:git@github.com:influxdata/influxdb-java.git</connection>
+    <developerConnection>scm:git:git@github.com:influxdata/influxdb-java.git</developerConnection>
+    <url>git@github.com:influxdata/influxdb-java.git</url>
+    <tag>influxdb-java-2.25</tag>
   </scm>
+
   <developers>
     <developer>
       <id>majst01</id>
@@ -44,6 +48,7 @@
       </plugin>
     </plugins>
   </reporting>
+
   <distributionManagement>
     <snapshotRepository>
       <id>ossrh</id>
@@ -54,6 +59,7 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
+
   <build>
     <resources>
       <resource>
@@ -243,26 +249,6 @@
           <releaseProfiles>release</releaseProfiles>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>3.2.4</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <gpgArguments>
-            <arg>--pinentry-mode</arg>
-            <arg>loopback</arg>
-          </gpgArguments>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
   <dependencies>
@@ -319,9 +305,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.msgpack</groupId>
+    <groupId>org.msgpack</groupId>
       <artifactId>msgpack-core</artifactId>
-      <version>0.9.8</version>
+      <version>0.9.12</version>
     </dependency>
     <!-- If we use okhttp instead of java urlconnection we achieve server failover
             of the influxdb server address resolves to all influxdb server ips. -->
@@ -418,10 +404,4 @@
       </build>
     </profile>
   </profiles>
-  <contributors>
-    <contributor>
-      <name>Lineaje DepFixer</name>
-      <email>221268890+Lineaje-DepFixer@users.noreply.github.com</email>
-    </contributor>
-  </contributors>
 </project>
